@@ -1,0 +1,31 @@
+<h1>Listing tasks</h1>
+<%= link_to 'New Task', new_task_path %>
+<h2>Incomplete</h2>
+<%= form_tag complete_path, :method => :put do %>
+  <ul class="list list-unstyled">
+  <% @incomplete_tasks.each do |task| %>
+    <li>
+      <%= check_box_tag "task_ids[]", task.id %>
+      <%= task.title %>
+      <%= task.category %>
+      <%= task.priority %>
+    </li>
+  <% end %>
+  </ul>
+  <%= submit_tag "Mark Complete" %>
+<% end %>
+<h2>Complete</h2>
+<%= form_tag incomplete_path, method: :put do %>
+  <ul class="list list-unstyled">
+  <% @complete_tasks.each do |task| %>
+    <li>
+      <%= check_box_tag "task_ids[]", task.id %>
+      <%= task.title %>
+      <%= task.category %>
+      <%= task.priority %>
+      <%= link_to "Delete", task_path(task), method: :delete, data: {confirm: "Are you sure"} %>
+    </li>
+  <% end %>
+  </ul>
+  <%= submit_tag "Mark Incomplete" %>
+<% end %>
