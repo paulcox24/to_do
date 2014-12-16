@@ -13,7 +13,7 @@
     </li>
   <% end %>
   </ul>
-  <%= submit_tag "Mark Complete" %>
+  <%= submit_tag "Mark Complete", class: "btn btn-default" %>
 <% end %>
 <h2>Complete</h2>
 <%= form_tag incomplete_path, method: :put do %>
@@ -29,5 +29,5 @@
     </li>
   <% end %>
   </ul>
-  <%= submit_tag "Mark Incomplete" %>
+  <%= submit_tag "Mark Incomplete", class: "btn btn-default" %>
 <% end %>
