@@ -4,8 +4,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @complete_tasks = Task.where(is_complete: true).order(:priority)
-    @incomplete_tasks = Task.where(is_complete: false).order(:priority)
+    @complete_tasks = Task.where(is_complete: true).order(:priority, :title)
+    @incomplete_tasks = Task.where(is_complete: false).order(:priority, :title)
   end
 
   # GET /tasks/1

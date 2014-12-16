@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+priority = ['High','Medium','Low']
+category = ['Home','Work','School']
+
+
+10.times do |i|
+  Task.create(
+    title: "Task #{i+1}",
+    category: category.sample,
+    priority: priority.sample,
+    is_complete: 'false'
+    )
+end

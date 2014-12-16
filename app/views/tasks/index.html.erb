@@ -5,10 +5,11 @@
   <ul class="list list-unstyled">
   <% @incomplete_tasks.each do |task| %>
     <li>
+      <h4>
       <%= check_box_tag "task_ids[]", task.id %>
-      <%= task.title %>
-      <%= task.category %>
-      <%= task.priority %>
+      <%= task.title %> 
+      <small>Category: <%= task.category %> Priority: <%= task.priority %></small>
+      </h4>
     </li>
   <% end %>
   </ul>
@@ -19,11 +20,12 @@
   <ul class="list list-unstyled">
   <% @complete_tasks.each do |task| %>
     <li>
+      <h4>
       <%= check_box_tag "task_ids[]", task.id %>
       <%= task.title %>
-      <%= task.category %>
-      <%= task.priority %>
+      <small>Category: <%= task.category %> Priority: <%= task.priority %></small>
       <%= link_to "Delete", task_path(task), method: :delete, data: {confirm: "Are you sure"} %>
+      </h4>
     </li>
   <% end %>
   </ul>
