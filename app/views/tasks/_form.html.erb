@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :priority %><br>
-    <%= f.text_field :priority %>
+    <%= f.select :priority, ['high','medium','low']%>
   </div>
   <div class="field">
     <%= f.label :is_complete %><br>
