@@ -8,7 +8,8 @@
       <h4>
       <%= check_box_tag "task_ids[]", task.id %>
       <%= task.title %> 
-      <small>Category: <%= task.category %> Priority: <%= task.priority.titleize %></small>
+      <small>Category: <%= task.category %> Priority: <%= task.priority.titleize %>
+      <%= link_to "Edit", edit_task_path(task) %></small>
       </h4>
     </li>
   <% end %>
