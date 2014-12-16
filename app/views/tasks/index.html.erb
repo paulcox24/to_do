@@ -8,7 +8,7 @@
       <h4>
       <%= check_box_tag "task_ids[]", task.id %>
       <%= task.title %> 
-      <small>Category: <%= task.category %> Priority: <%= task.priority %></small>
+      <small>Category: <%= task.category %> Priority: <%= task.priority.titleize %></small>
       </h4>
     </li>
   <% end %>
@@ -23,7 +23,7 @@
       <h4>
       <%= check_box_tag "task_ids[]", task.id %>
       <%= task.title %>
-      <small>Category: <%= task.category %> Priority: <%= task.priority %>
+      <small>Category: <%= task.category %> Priority: <%= task.priority.titleize %>
       <%= link_to "Delete", task_path(task), method: :delete, data: {confirm: "Are you sure"} %></small>
       </h4>
     </li>
