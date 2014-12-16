@@ -1,5 +1,5 @@
-<h1>Listing tasks</h1>
-<%= link_to 'New Task', new_task_path %>
+<br>
+<%= link_to 'New Task', new_task_path, class: "btn btn-primary" %>
 <h2>Incomplete</h2>
 <%= form_tag complete_path, :method => :put do %>
   <ul class="list list-unstyled">
@@ -23,8 +23,8 @@
       <h4>
       <%= check_box_tag "task_ids[]", task.id %>
       <%= task.title %>
-      <small>Category: <%= task.category %> Priority: <%= task.priority %></small>
-      <%= link_to "Delete", task_path(task), method: :delete, data: {confirm: "Are you sure"} %>
+      <small>Category: <%= task.category %> Priority: <%= task.priority %>
+      <%= link_to "Delete", task_path(task), method: :delete, data: {confirm: "Are you sure"} %></small>
       </h4>
     </li>
   <% end %>
